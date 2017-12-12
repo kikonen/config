@@ -1,0 +1,60 @@
+#
+# START KI
+#
+#kbdrate -s -r 30.0 -d 250
+
+JAVA_HOME=/opt/jdk
+SCALA_HOME=/opt/scala
+JRE_HOME=/opt/jdk
+ANT_HOME=/opt/ant
+GRADLE_HOME=/opt/gradle
+REDIS_HOME=/opt/kari/redis
+HIVE_HOME=/opt/kari/hive
+HADOOP_HOME=/opt/kari/hadoop
+SUBLIME_HOME=/opt/kari/sublime
+HEROKU_HOME=/usr/local/heroku
+ADT_HOME=/opt/adt
+NODE_HOME=/opt/node
+PHANTOMJS_HOME=/opt/phantomjs
+
+#PATH=$PATH:/opt/bitkeeper
+PATH=$JAVA_HOME/bin:/opt/jre/bin:/opt/jdk/jre/javaws:$PATH
+PATH=$PATH:$SCALA_HOME/bin
+PATH=$PATH:$ANT_HOME/bin
+PATH=$PATH:$GRADLE_HOME/bin
+PATH=$PATH:$SUBLIME_HOME
+PATH=$PATH:$HEROKU_HOME/bin
+PATH=$PATH:$ADT_HOME/sdk/tools
+PATH=$PATH:$NODE_HOME/bin
+PATH=$PATH:$PHANTOMJS_HOME/bin
+#PATH=$PATH:/opt/gv/bin
+#PATH=$PATH:/usr/local/kde/bin
+#PATH=$PATH:/opt/unsermake
+#PATH=$PATH:/opt/jvmstat/bin
+PATH=$PATH:/usr/sbin:/sbin
+PATH=$PATH:~/.local/bin:~/bin:~/s
+PATH=$PATH:/opt/bin
+
+#LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/yjp/bin
+#LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib/giFT
+
+#LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/qt3/lib64
+
+#LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/yjp/bin/linux-x86-32
+
+#_JAVA_OPTIONS='-Xverify:none -Dsun.java2d.opengl=true'
+#_JAVA_OPTIONS='-Xverify:none'
+#_JAVA_OPTIONS='-server -XX:+DoEscapeAnalysis'
+CATALINA_OPTS="-server"
+
+MANPATH=$MANPATH:/usr/local/share/man
+
+#export LD_LIBRARY_PATH
+export _JAVA_OPTIONS
+export PATH
+export JAVA_HOME JRE_HOME
+export CATALINA_OPTS
+export MANPATH
+#
+
+

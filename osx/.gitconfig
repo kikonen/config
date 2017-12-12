@@ -1,0 +1,9 @@
+[gui]
+	spellingdictionary = en
+[push]
+	default = simple
+[merge]
+	tool = kdiff3
+[user]
+	email = kari.ikonen@ecolane.com
+	name = Kari Ikonen

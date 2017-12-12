@@ -1,0 +1,3 @@
+Host xxx
+  IdentityFile ~/.ssh/id_dsa_work_to_xxx
+  User kari

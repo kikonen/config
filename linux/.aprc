@@ -1,0 +1,10 @@
+AwesomePrint.defaults = {
+  indent: 2,
+  plain: true,
+  color: {
+    keyword: :blue,
+    symbol: :blue,
+    variable: :blue
+  }
+}
+p

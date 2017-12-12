@@ -1,0 +1,31 @@
+# Minimal safety guarantee; must be in master to run this
+VALID=`git branch | grep "*" | grep "master"`
+if [ "$VALID" == "" -a "$1" != '--any' ]; then
+  echo "NOT in master (or use --any)!"
+  exit
+fi
+
+echo "Update remote branches"
+git fetch
+echo ""
+
+echo "EXISTING BRANCHES:"
+git branch -a
+echo ""
+
+echo "Prune remote branches"
+git fetch -p
+echo ""
+
+echo "Prune local branches"
+git branch --merged | \
+  grep -v "\*" | \
+  grep -v '^* master$' | \
+  grep -v '^  master$' | \
+  grep -v '^* .*epic.*$' | \
+  grep -v '^  .*epic.*$' | \
+  xargs -n 1 git branch -d
+echo ""
+
+echo "REMAINING BRANCHES:"
+git branch -a

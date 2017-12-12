@@ -1,0 +1,13 @@
+[user]
+	email = mr.kari.ikonen@gmail.com
+	name = Kari Ikonen
+[gui]
+	fontdiff = -family \"Liberation Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+	fontui = -family \"DejaVu Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+[core]
+	editor = emacs
+	excludesfile = ~/.gitignore
+[push]
+	default = simple
+[merge]
+	tool = kdiff3
