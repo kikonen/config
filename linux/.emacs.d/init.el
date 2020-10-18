@@ -6,8 +6,8 @@
 (require 'package)
 (setq package-archives
 '(("gnu" . "http://elpa.gnu.org/packages/")
-("melpa" . "http://melpa.milkbox.net/packages/")
-("marmalade" . "http://marmalade-repo.org/packages/")))
+("melpa" . "https://melpa.org/packages/")))
+;;("marmalade" . "http://marmalade-repo.org/packages/")))
 (package-initialize)
 
 ;; HACK KI "Symbol's function definition is void: apropos-macrop"
@@ -22,7 +22,7 @@
 (show-paren-mode 1)
 
 ;; dired dual window mode
-(setq dired-dwim-target t)
+(setq dired-dwim-target nil)
 
 ;; stop pesky ~ files from littering
 (setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
@@ -50,7 +50,7 @@
 ;; (set-frame-font "Font Name 16")
 ;;(set-face-attribute 'default nil :height 105)
 (set-frame-font "Consolas")
-(set-face-attribute 'default nil :height 105)
+(set-face-attribute 'default nil :height 120)
 (set-background-color "lightyellow1")
 
 ;; To load a theme
@@ -189,6 +189,13 @@ visible-bell nil))
 ;;(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . web-mode))
+;;(add-to-list 'auto-mode-alist '("\\.svelte\\'" . web-mode))
+
+;;
+;; svelte-mode
+;;
+(require 'svelte-mode)
+(add-to-list 'auto-mode-alist '("\\.svelte\\'" . svelte-mode))
 
 ;;
 ;; slim-mode
@@ -324,16 +331,20 @@ Version 2015-06-11"
  '(electric-indent-mode nil)
  '(indent-tabs-mode nil)
  '(js-indent-level 2)
- '(js2-basic-offset 2)
  '(mark-even-if-inactive t)
- '(ruby-align-to-stmt-keywords (quote (def if unless while begin for case)))
+ '(package-selected-packages
+   '(svelte-mode yaml-mode web-mode typescript-mode slime slim-mode scss-mode scala-mode2 php-mode js2-mode haml-mode groovy-mode grails-mode gradle-mode flymake-yaml flymake-jshint flymake-haml flycheck column-marker auto-complete ag))
+ '(ruby-align-to-stmt-keywords '(def if unless while begin for case))
  '(ruby-deep-indent-paren nil)
- '(scroll-bar-mode (quote right))
+ '(scroll-bar-mode 'right)
  '(tool-bar-mode nil)
  '(transient-mark-mode 1)
  '(typescript-indent-level 2)
- '(uniquify-buffer-name-style (quote post-forward) nil (uniquify))
+ '(uniquify-buffer-name-style 'post-forward nil (uniquify))
  '(visible-bell 0)
+ '(web-mode-enable-auto-closing nil)
+ '(web-mode-enable-auto-pairing nil)
+ '(web-mode-enable-auto-quoting nil)
  '(web-mode-markup-indent-offset 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
