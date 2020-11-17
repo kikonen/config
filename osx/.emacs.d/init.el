@@ -4,10 +4,10 @@
 ;; i to mark to install ;; d to mark to delete
 ;; x to execute those actions
 (require 'package)
+
 (setq package-archives
 '(("gnu" . "http://elpa.gnu.org/packages/")
-("melpa" . "http://melpa.milkbox.net/packages/")))
-;;("marmalade" . "http://marmalade-repo.org/packages/")))
+("melpa" . "https://melpa.org/packages/")))
 (package-initialize)
 
 ;; HACK KI "Symbol's function definition is void: apropos-macrop"
@@ -17,6 +17,9 @@
 ;;; Making things pretty
 (setq inhibit-splash-screen t) ; turn off splash screen
 (show-paren-mode 1)
+
+;; show char count
+(add-to-list 'global-mode-string '(" %i"))
 
 ;; stop pesky ~ files from littering
 (setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
@@ -52,8 +55,17 @@
         (message "No non-ascii characters."))))
 
 
+;; https://stackoverflow.com/questions/6918134/how-do-i-indent-n-spaces-in-emacs
+(defun insert-tabs (n)
+  "Inserts N number of tabs"
+  (interactive "nNumber of tabs: ")
+  (dotimes (i n)
+    (indent-for-tab-command)))
+(global-set-key [?\C-x \C-tab] 'insert-tabs)
+
+
 ;; To change the font
-;; (set-frame-font "Font Name 16")
+;;(set-frame-font "Consolas 10")
 
 ;; To load a theme
 ;; (load-theme 'theme-name)
@@ -148,6 +160,11 @@ visible-bell nil))
   '(load-library "sql-indent"))
 
 ;;
+;; Helm
+;;
+;;(require 'helm-config)
+
+;;
 ;; START MuMaMo
 ;;
 
@@ -186,6 +203,7 @@ visible-bell nil))
 ;;(add-to-list 'auto-mode-alist '("\\.djhtml\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 (add-to-list 'auto-mode-alist '("\\.html\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.svelte\\'" . web-mode))
 
 ;;
 ;; slim-mode
@@ -207,9 +225,9 @@ visible-bell nil))
 ;; @see http://www.emacswiki.org/emacs/Flycheck
 ;; @see http://truongtx.me/2014/02/21/emacs-setup-jshint-for-on-the-fly-petential-error-checking/
 ;; @see http://www.jshint.com/docs/options/
-(require 'flycheck)
-(add-hook 'js2-mode-hook
-          (lambda () (flycheck-mode t)))
+;(require 'flycheck)
+;(add-hook 'js2-mode-hook
+;          (lambda () (flycheck-mode t)))
 
 (defun xah-syntax-color-hex ()
   "Syntax color text of the form 「#ff1100」 in current buffer.
@@ -309,12 +327,15 @@ Version 2015-06-11"
  '(js-indent-level 2)
  '(js2-basic-offset 2)
  '(mark-even-if-inactive t)
- '(ruby-align-to-stmt-keywords (quote (def if unless while begin for case)))
+ '(org-export-with-priority t)
+ '(package-selected-packages
+   '(ag ## gradle-mode vagrant web-mode php-mode yaml-mode slim-mode scss-mode marmalade kurecolor js2-mode hexrgb haml-mode flymake-sass flymake-haml flycheck-cask edit-color-stamp column-marker))
+ '(ruby-align-to-stmt-keywords '(def if unless while begin for case))
  '(ruby-deep-indent-paren nil)
- '(scroll-bar-mode (quote right))
+ '(scroll-bar-mode 'right)
  '(tool-bar-mode nil)
  '(transient-mark-mode 1)
- '(uniquify-buffer-name-style (quote post-forward) nil (uniquify))
+ '(uniquify-buffer-name-style 'post-forward nil (uniquify))
  '(visible-bell f)
  '(web-mode-markup-indent-offset 2))
 (custom-set-faces
@@ -323,3 +344,4 @@ Version 2015-06-11"
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'downcase-region 'disabled nil)
