@@ -1,0 +1,2 @@
+;;; Generated package description from /home/kari/.emacs.d/elpa/svelte-mode-20201009.831/svelte-mode.el  -*- no-byte-compile: t -*-
+(define-package "svelte-mode" "20201009.831" "Emacs major mode for Svelte" '((emacs "26.1")) :commit "2a19e0aeea9dd90388d86d6adf2339c9c94b73e8" :keywords '("wp" "languages") :authors '(("Leaf" . "leafvocation@gmail.com")) :maintainer '("Leaf" . "leafvocation@gmail.com") :url "https://github.com/leafOfTree/svelte-mode")

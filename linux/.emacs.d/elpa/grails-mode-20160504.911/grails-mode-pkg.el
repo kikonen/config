@@ -1,0 +1,2 @@
+;;; Generated package description from /home/kari/.emacs.d/elpa/grails-mode-20160504.911/grails-mode.el  -*- no-byte-compile: t -*-
+(define-package "grails-mode" "20160504.911" "minor-mode that adds some Grails project management to a grails project" 'nil :commit "26da902d1158c0312628d57578109be54eca2415" :keywords '("languages") :authors '(("Jim Morris" . "morris@wolfman.com")) :maintainer '("Russel Winder" . "russel@winder.org.uk") :url "http://blog.wolfman.com")

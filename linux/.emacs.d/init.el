@@ -22,7 +22,7 @@
 (show-paren-mode 1)
 
 ;; dired dual window mode
-(setq dired-dwim-target nil)
+(setq dired-dwim-target t)
 
 ;; stop pesky ~ files from littering
 (setq backup-directory-alist (quote ((".*" . "~/.emacs_backups/"))))
@@ -219,9 +219,9 @@ visible-bell nil))
 ;; @see http://www.emacswiki.org/emacs/Flycheck
 ;; @see http://truongtx.me/2014/02/21/emacs-setup-jshint-for-on-the-fly-petential-error-checking/
 ;; @see http://www.jshint.com/docs/options/
-(require 'flycheck)
-(add-hook 'js2-mode-hook
-          (lambda () (flycheck-mode t)))
+;;(require 'flycheck)
+;;(add-hook 'js2-mode-hook
+;;          (lambda () (flycheck-mode t)))
 
 (defun xah-syntax-color-hex ()
   "Syntax color text of the form 「#ff1100」 in current buffer.
@@ -265,6 +265,13 @@ Version 2015-06-11"
 ;;
 (autoload 'haml-mode "haml-mode")
 (add-to-list 'auto-mode-alist '("\\.haml\\'" . haml-mode))
+
+;;
+;; OpenGL
+;;
+(require 'glsl-mode)
+(add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
 
 ;;
 ;; java
@@ -333,7 +340,7 @@ Version 2015-06-11"
  '(js-indent-level 2)
  '(mark-even-if-inactive t)
  '(package-selected-packages
-   '(svelte-mode yaml-mode web-mode typescript-mode slime slim-mode scss-mode scala-mode2 php-mode js2-mode haml-mode groovy-mode grails-mode gradle-mode flymake-yaml flymake-jshint flymake-haml flycheck column-marker auto-complete ag))
+   '(glsl-mode svelte-mode yaml-mode web-mode typescript-mode slime slim-mode scss-mode scala-mode2 php-mode js2-mode haml-mode groovy-mode grails-mode gradle-mode flymake-yaml flymake-jshint flymake-haml flycheck column-marker auto-complete ag))
  '(ruby-align-to-stmt-keywords '(def if unless while begin for case))
  '(ruby-deep-indent-paren nil)
  '(scroll-bar-mode 'right)
