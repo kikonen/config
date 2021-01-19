@@ -80,11 +80,22 @@ function ssh {
 # Your previous /Users/kari/.bash_profile file was backed up as /Users/kari/.bash_profile.macports-saved_2015-05-29_at_14:59:42
 ##
 
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+
+export JAVA_HOME=/opt/ecolane/jdk
+export PATH=$JAVA_HOME/bin:$PATH
+
 # MacPorts Installer addition on 2015-05-29_at_14:59:42: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 alias be='bundle exec'
 
+#alias gitk='gitk 2>/dev/null'
 
-export PS1="[\u@\h \W]$ "
+export PS1="[\u@\h \W $(parse_git_branch)]$ "
+
+export PROMPT_COMMAND='echo -ne "\033]0;$(basename $(dirname "$PWD"))/$(basename "$PWD") $(parse_git_branch)\007"'
