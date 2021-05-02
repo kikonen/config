@@ -50,8 +50,11 @@
 ;; (set-frame-font "Font Name 16")
 ;;(set-face-attribute 'default nil :height 105)
 (set-frame-font "Consolas")
-(set-face-attribute 'default nil :height 120)
-(set-background-color "lightyellow1")
+;;(set-face-attribute 'default nil :height 120)
+;;(set-background-color "lightyellow1")
+
+(set-face-attribute 'default nil :height 110)
+(set-background-color "WhiteSmoke")
 
 ;; To load a theme
 ;; (load-theme 'theme-name)
@@ -198,6 +201,19 @@ visible-bell nil))
 (add-to-list 'auto-mode-alist '("\\.svelte\\'" . svelte-mode))
 
 ;;
+;; react-mode
+;;
+(require 'rjsx-mode)
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . rjsx-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . typescript-mode))
+
+;;
+;; typescript-mode
+;;
+(require 'typescript-mode)
+(add-to-list 'auto-mode-alist '("\\.ts\\'" . typescript-mode))
+
+;;
 ;; slim-mode
 ;;
 (require 'slim-mode)
@@ -272,6 +288,10 @@ Version 2015-06-11"
 (require 'glsl-mode)
 (add-to-list 'auto-mode-alist '("\\.fs\\'" . glsl-mode))
 (add-to-list 'auto-mode-alist '("\\.vs\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.gs\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.glsl\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.vrt\\'" . glsl-mode))
+(add-to-list 'auto-mode-alist '("\\.pix\\'" . glsl-mode))
 
 ;;
 ;; java
@@ -340,7 +360,7 @@ Version 2015-06-11"
  '(js-indent-level 2)
  '(mark-even-if-inactive t)
  '(package-selected-packages
-   '(glsl-mode svelte-mode yaml-mode web-mode typescript-mode slime slim-mode scss-mode scala-mode2 php-mode js2-mode haml-mode groovy-mode grails-mode gradle-mode flymake-yaml flymake-jshint flymake-haml flycheck column-marker auto-complete ag))
+   '(rjsx-mode js-react-redux-yasnippets nginx-mode docker-compose-mode dockerfile-mode glsl-mode svelte-mode yaml-mode web-mode typescript-mode slime slim-mode scss-mode scala-mode2 php-mode js2-mode haml-mode groovy-mode grails-mode gradle-mode flymake-yaml flymake-jshint flymake-haml flycheck column-marker auto-complete ag))
  '(ruby-align-to-stmt-keywords '(def if unless while begin for case))
  '(ruby-deep-indent-paren nil)
  '(scroll-bar-mode 'right)
@@ -358,4 +378,4 @@ Version 2015-06-11"
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(fringe ((t (:background "LightYellow1")))))
+ '(fringe ((t (:background "WhiteSmoke")))))
